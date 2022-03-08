@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">猜數字</string>
+    <string name="dialog_title">猜</string>
+    <string name="pause_bottom">確認</string>
+    <string name="choose_1_10">輸入１－１０數字</string>
+    <string name="guess">猜啊</string>
+    <string name="counter_zero">０</string>
+    <string name="BIG">大一點</string>
+    <string name="SMALLER">小一點</string>
+    <string name="BINGO">你贏了</string>
+    <string name="something_wrong">有問題</string>
+</resources>

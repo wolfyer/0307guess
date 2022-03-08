@@ -1,7 +1,6 @@
 package com.vangood.guess4
 
 import android.os.Bundle
-import android.text.Html
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -43,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         updateUI()
     }
     fun updateUI(){
-        binding.tvCount.text = (game.count.toString())
+        binding.tvCount.text = getString(R.string.counter_times, game.count)
+            //(game.count.toString())
     }
 }
 

@@ -9,4 +9,5 @@
     <string name="SMALLER">smaller</string>
     <string name="BINGO">WIN</string>
     <string name="something_wrong">Warning</string>
+    <string name="counter_times"> %1$d Times</string>
 </resources>
