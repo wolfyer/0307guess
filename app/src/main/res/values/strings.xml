@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Guess4</string>
+    <string name="dialog_title">Guess</string>
+    <string name="pause_bottom">OK</string>
+    <string name="choose_1_10">Choose 1-10</string>
+    <string name="guess">Guess</string>
+    <string name="counter_zero">0</string>
+    <string name="BIG">bigger</string>
+    <string name="SMALLER">smaller</string>
+    <string name="BINGO">WIN</string>
+    <string name="something_wrong">Warning</string>
 </resources>

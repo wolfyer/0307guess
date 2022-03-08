@@ -1,6 +1,9 @@
 package com.vangood.guess4
 
 class NumberGame {
+    enum class GameState{
+        INIT, BIGGER, SMALLER, BINGO, END
+    }
     var secretnum : Int = 0
     var count = 0
     var end =false
@@ -12,15 +15,15 @@ class NumberGame {
         count =0
         end =false
     }
-    fun diffmessage(num:Int):String{
+    fun diffmessage(num:Int):GameState{
         count++
         var message = if (num > secretnum){
-            "Smaller"
+            GameState.SMALLER
         }else if (num < secretnum){
-            "Bigger"
+            GameState.BIGGER
         }else{
             end =true
-            "You got it!"
+            GameState.BINGO
         }
         return message
     }

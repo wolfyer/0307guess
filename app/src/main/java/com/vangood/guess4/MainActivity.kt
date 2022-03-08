@@ -26,13 +26,20 @@ class MainActivity : AppCompatActivity() {
     val game = NumberGame()
     fun guess(view: View){
         val num = binding.tnGuess.text.toString().toInt()
+        val state = game.diffmessage(num)
+        val message = when(state){
+            NumberGame.GameState.BIGGER -> getString(R.string.BIG)
+            NumberGame.GameState.SMALLER -> getString(R.string.SMALLER)
+            NumberGame.GameState.BINGO -> getString(R.string.BINGO)
+            else ->getString(R.string.something_wrong)
+        }
             AlertDialog.Builder(this)
-                .setTitle("WIN")
-                .setMessage("want to replay again?")
-                .setPositiveButton("OK"){ dialog, which -> if (game.end){game.resetgame()}
+                .setTitle(resources.getString(R.string.dialog_title))
+                .setMessage(message)
+                .setPositiveButton(getString(R.string.pause_bottom)){ dialog, which -> if (game.end){game.resetgame()}
                     updateUI()}
                 .show()
-        Toast.makeText(this,game.diffmessage(num),Toast.LENGTH_LONG).show()
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         updateUI()
     }
     fun updateUI(){

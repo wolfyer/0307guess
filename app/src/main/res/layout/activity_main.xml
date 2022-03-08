@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
-        android:text="Choose 1-10"
+        android:text="@string/choose_1_10"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="guess"
-        android:text="Guess"
+        android:text="@string/guess"
         app:layout_constraintStart_toStartOf="@+id/tn_guess"
         app:layout_constraintTop_toBottomOf="@+id/tn_guess" />
 
@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="20dp"
-        android:text="0"
+        android:text="@string/counter_zero"
         app:layout_constraintBottom_toTopOf="@+id/tn_guess"
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
