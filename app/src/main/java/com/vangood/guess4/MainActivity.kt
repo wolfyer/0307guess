@@ -1,11 +1,13 @@
 package com.vangood.guess4
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.vangood.guess4.databinding.ActivityMainBinding
-import java.util.concurrent.Executor
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -31,12 +33,16 @@ class MainActivity : AppCompatActivity() {
         }else if (n > 0){
             message = "Smaller!"
         }else{
-            secretNumber.replay()
+            AlertDialog.Builder(this)
+                .setTitle("WIN")
+                .setMessage("want to replay again?")
+                .setPositiveButton("OK"){ dialog, which ->secretNumber.replay()}
+                .show()
         }
         Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         binding.tvCount.setText(secretNumber.count.toString())
+        //binding.textView3.setTextColor(0xffff00ff)
     }
-
 
 }
 
