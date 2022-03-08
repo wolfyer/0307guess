@@ -23,26 +23,20 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this,"your bmi is $bmi",Toast.LENGTH_LONG).show()
 
     }
-    val secretNumber = SelectNum()
+    val game = NumberGame()
     fun guess(view: View){
         val num = binding.tnGuess.text.toString().toInt()
-        val n = secretNumber.diff(num)
-        var message = "You win the game the secret number is $num"
-        if (n < 0){
-            message = "Bigger!"
-        }else if (n > 0){
-            message = "Smaller!"
-        }else{
             AlertDialog.Builder(this)
                 .setTitle("WIN")
                 .setMessage("want to replay again?")
-                .setPositiveButton("OK"){ dialog, which ->secretNumber.replay()}
+                .setPositiveButton("OK"){ dialog, which -> if (game.end){game.resetgame()}
+                    updateUI()}
                 .show()
-        }
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
-        binding.tvCount.setText(secretNumber.count.toString())
-        //binding.textView3.setTextColor(0xffff00ff)
+        Toast.makeText(this,game.diffmessage(num),Toast.LENGTH_LONG).show()
+        updateUI()
     }
-
+    fun updateUI(){
+        binding.tvCount.text = (game.count.toString())
+    }
 }
 
